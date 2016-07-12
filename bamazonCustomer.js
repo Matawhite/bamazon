@@ -9,7 +9,7 @@ function start(){
 
   {
     name: 'id',
-    message: 'Please select an item you wish to purchase by it\'s ID number.'
+    message: 'Please select an item you wish to purchase by it\'s ID number.\n'
   },
   {
     name: 'amount',
@@ -25,7 +25,7 @@ function start(){
         updateStock(answers.amount, answers.id);
         getProducts();
       }else{
-        console.log('Sorry we do not have enough items to fullfil your order.');
+        console.log(`Sorry we do not have enough items to fullfil your order. We only have ${quantity} in stock`);
       }
       connectDB.connection.end();
     })
