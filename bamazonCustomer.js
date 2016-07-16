@@ -2,13 +2,14 @@ var mysql = require('mysql');
 var inquirer = require('inquirer');
 var connectDB = require('./connectDB');
 
+
 function start(){
   getProducts();
   inquirer.prompt([
 
   {
     name: 'id',
-    message: 'Please select an item you wish to purchase by it\'s ID number.\n'
+    message: '\nPlease select an item you wish to purchase by it\'s ID number.'
   },
   {
     name: 'amount',
@@ -45,7 +46,6 @@ connectDB.connection.query('UPDATE Products SET `StockQuantity` = StockQuantity 
   [amount, id],
   function(err, res){
     if(err) throw err;
-    console.log()
   })
 }
 
